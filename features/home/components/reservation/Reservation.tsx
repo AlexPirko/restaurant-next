@@ -25,7 +25,7 @@ function generateTimeSlots(start: string, end: string, interval: number) {
 
 export function Reservation() {
   return (
-    <section className="-mt-16 relative z-20 mb-24">
+    <section className="-mt-16 relative z-20 mb-0 lg:mb-8">
       <Container>
         <div className="rounded-3xl bg-white shadow-2xl ring-1 ring-black/5">
           <div className="grid gap-8 p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
