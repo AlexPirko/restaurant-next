@@ -8,7 +8,7 @@ export function StoryBottom() {
 
   return (
     <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="relative aspect-[4/5] order-2 overflow-hidden rounded-sm lg:order-1">
+      <div className="relative aspect-4/5 order-2 overflow-hidden rounded-sm lg:order-1">
         <Image
           src={menu.image}
           alt={menu.title.replace("\n", " ")}
