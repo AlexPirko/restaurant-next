@@ -1,7 +1,5 @@
-export function HomePage() {
-  return (
-    <>
-      <h1>Restaurant Next</h1>
-    </>
-  );
+import { HomePage } from "@/features/home/HomePage";
+
+export default function Page() {
+  return <HomePage />;
 }

@@ -1,0 +1,51 @@
+.hero-slider {
+  position: relative;
+}
+
+.hero-slider .swiper-pagination {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 12px;
+
+  width: auto;
+}
+
+.hero-slider .swiper-pagination-bullet {
+  width: 42px;
+  height: 2px;
+
+  border-radius: 9999px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  opacity: 1;
+
+  transition:
+    width 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+  width: 72px;
+  background: #ffffff;
+}
+
+.hero-content {
+  animation: heroContent 0.8s ease;
+}
+
+@keyframes heroContent {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

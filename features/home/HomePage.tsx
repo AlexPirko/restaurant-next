@@ -1,3 +1,9 @@
+import { Hero } from "./components/hero/Hero";
+
 export function HomePage() {
-  return <h1>Restaurant Next</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
