@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "motion/react";
+import { fadeLeft, imageReveal, viewport } from "@/lib/motion";
 
 import { storyContent } from "./story.data";
 
@@ -8,16 +13,28 @@ export function StoryBottom() {
 
   return (
     <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-      <div className="relative aspect-4/5 order-2 overflow-hidden rounded-sm lg:order-1">
+      <motion.div
+        variants={imageReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className="relative aspect-4/5 order-2 overflow-hidden rounded-sm lg:order-1"
+      >
         <Image
           src={menu.image}
           alt={menu.title.replace("\n", " ")}
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"
         />
-      </div>
+      </motion.div>
 
-      <div className="order-1 lg:order-2">
+      <motion.div
+        variants={fadeLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className="order-1 lg:order-2"
+      >
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
           {menu.eyebrow}
         </p>
@@ -52,7 +69,7 @@ export function StoryBottom() {
             <path d="m13 6 6 6-6 6" />
           </svg>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 import { Container } from "@/components/ui/Container";
+import { fadeUp, viewport } from "@/lib/motion";
 
 import { LocationsContent } from "./LocationsContent";
 import { locations } from "./locations.data";
@@ -17,7 +18,13 @@ export function Locations() {
   return (
     <section className="py-24">
       <Container>
-        <div className="grid gap-16 lg:grid-cols-2">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="grid gap-16 lg:grid-cols-2"
+        >
           <div className="relative aspect-square overflow-hidden rounded-sm">
             <AnimatePresence mode="wait">
               <motion.div
@@ -47,7 +54,7 @@ export function Locations() {
             active={active}
             setActive={setActive}
           />
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

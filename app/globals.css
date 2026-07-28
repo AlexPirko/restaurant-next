@@ -44,8 +44,16 @@ body {
   font-family: var(--font-sans);
 }
 
+main {
+  margin-top: 60px;
+}
+
 .font-serif {
   font-family: var(--font-serif);
+}
+
+a {
+  cursor: pointer;
 }
 
 @keyframes locationFade {

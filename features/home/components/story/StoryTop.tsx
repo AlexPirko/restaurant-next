@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
+import { fadeRight, imageReveal, viewport } from "@/lib/motion";
 
 import { storyContent } from "./story.data";
 import { StoryFeature } from "./StoryFeature";
@@ -9,7 +13,12 @@ export function StoryTop() {
 
   return (
     <div className="grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-      <div>
+      <motion.div
+        variants={fadeRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-700">
           {about.eyebrow}
         </p>
@@ -55,16 +64,22 @@ export function StoryTop() {
             <path d="m13 6 6 6-6 6" />
           </svg>
         </Link>
-      </div>
+      </motion.div>
 
-      <div className="relative aspect-4/5 overflow-hidden rounded-sm">
+      <motion.div
+        variants={imageReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className="relative aspect-4/5 overflow-hidden rounded-sm"
+      >
         <Image
           src={about.image}
           alt={about.title.replace("\n", " ")}
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

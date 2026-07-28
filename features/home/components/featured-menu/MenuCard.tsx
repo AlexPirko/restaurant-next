@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { motion } from "motion/react";
+
+import { cardHover, fadeUp } from "@/lib/motion";
 
 type MenuCardProps = {
   title: string;
@@ -9,7 +12,12 @@ type MenuCardProps = {
 
 export function MenuCard({ title, description, price, image }: MenuCardProps) {
   return (
-    <article className="group">
+    <motion.article
+      key={price}
+      variants={fadeUp}
+      whileHover={cardHover}
+      className="group"
+    >
       <div className="overflow-hidden rounded-sm">
         <Image
           src={image}
@@ -29,6 +37,6 @@ export function MenuCard({ title, description, price, image }: MenuCardProps) {
 
         <p className="leading-7 text-neutral-600">{description}</p>
       </div>
-    </article>
+    </motion.article>
   );
 }

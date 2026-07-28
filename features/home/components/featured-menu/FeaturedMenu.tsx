@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
 
 import { Container } from "@/components/ui/Container";
+import { motion } from "motion/react";
+
+import { fadeUp, stagger, viewport } from "@/lib/motion";
 
 import { MenuCard } from "./MenuCard";
 import { featuredMenu } from "./menu.data";
@@ -9,7 +13,13 @@ export function FeaturedMenu() {
   return (
     <section className="py-8 lg:py-16">
       <Container>
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="mx-auto mb-16 max-w-3xl text-center"
+        >
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
             {featuredMenu.eyebrow}
           </span>
@@ -23,13 +33,19 @@ export function FeaturedMenu() {
           <p className="leading-8 text-neutral-600">
             {featuredMenu.description}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="grid gap-x-8 gap-y-16 md:grid-cols-2"
+        >
           {featuredMenu.items.map((item) => (
             <MenuCard key={item.title} {...item} />
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-20 text-center">
           <Link

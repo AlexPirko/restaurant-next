@@ -1,4 +1,9 @@
+"use client";
+
 import { Container } from "@/components/ui/Container";
+import { motion } from "motion/react";
+
+import { buttonHover, buttonTap, fadeUp, viewport } from "@/lib/motion";
 
 const timeSlots = generateTimeSlots("12:00", "22:00", 30);
 
@@ -25,7 +30,13 @@ function generateTimeSlots(start: string, end: string, interval: number) {
 
 export function Reservation() {
   return (
-    <section className="-mt-16 relative z-20 mb-0 lg:mb-8">
+    <motion.section
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      className="-mt-16 relative z-20 mb-0 lg:mb-8"
+    >
       <Container>
         <div className="rounded-3xl bg-white shadow-2xl ring-1 ring-black/5">
           <div className="grid gap-8 p-8 lg:grid-cols-[1fr_auto] lg:items-center lg:p-10">
@@ -34,14 +45,20 @@ export function Reservation() {
                 Reservation
               </p>
 
-              <h2 className="font-serif text-3xl font-semibold text-neutral-900 lg:text-4xl">
+              <motion.h2
+                variants={fadeUp}
+                className="font-serif mt-4 whitespace-pre-line text-4xl text-neutral-900"
+              >
                 Reserve Your Table
-              </h2>
+              </motion.h2>
 
-              <p className="mt-3 max-w-xl text-neutral-600">
+              <motion.p
+                variants={fadeUp}
+                className="mt-3 max-w-xl text-sm text-neutral-600"
+              >
                 Experience refined cuisine in an elegant atmosphere. Book your
                 table in just a few clicks.
-              </p>
+              </motion.p>
             </div>
 
             <form className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -116,16 +133,18 @@ export function Reservation() {
                 </svg>
               </div>
 
-              <button
+              <motion.button
+                whileHover={buttonHover}
+                whileTap={buttonTap}
                 type="submit"
                 className="h-14 rounded-full bg-black px-8 font-semibold text-white transition hover:bg-neutral-800"
               >
                 Reserve
-              </button>
+              </motion.button>
             </form>
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

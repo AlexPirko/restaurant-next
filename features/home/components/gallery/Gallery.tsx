@@ -1,4 +1,9 @@
+"use client";
+
+import { motion } from "motion/react";
+
 import { Container } from "@/components/ui/Container";
+import { stagger, fadeUp, viewport } from "@/lib/motion";
 
 import { gallery } from "./gallery.data";
 import { GalleryItem } from "./GalleryItem";
@@ -7,7 +12,13 @@ export function Gallery() {
   return (
     <section className="py-24 lg:py-32">
       <Container>
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="mx-auto mb-16 max-w-3xl text-center"
+        >
           <span className="mb-3 block text-sm font-medium uppercase tracking-[0.3em] text-amber-700">
             {gallery.eyebrow}
           </span>
@@ -19,9 +30,13 @@ export function Gallery() {
           <p className="mt-6 text-lg leading-8 text-neutral-600">
             {gallery.description}
           </p>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="
             grid
             grid-cols-1
@@ -34,9 +49,9 @@ export function Gallery() {
           "
         >
           {gallery.items.map((item) => (
-            <GalleryItem key={item.image} item={item} />
+            <GalleryItem key={item.id} item={item} />
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

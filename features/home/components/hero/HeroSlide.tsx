@@ -12,7 +12,7 @@ type HeroSlideProps = {
 
 export function HeroSlide({ slide, locale, priority = false }: HeroSlideProps) {
   return (
-    <div className="relative h-[65vh] min-h-[620px] max-h-[800px] overflow-hidden">
+    <div className="relative h-[65vh] min-h-155 max-h-200 overflow-hidden">
       <Image
         src={slide.image}
         alt={slide.title[locale]}
