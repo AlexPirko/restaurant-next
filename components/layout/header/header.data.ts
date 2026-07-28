@@ -1,0 +1,37 @@
+export const navigation = [
+  {
+    label: "Menu",
+    href: "/menu",
+  },
+  {
+    label: "Private Events",
+    href: "/private-events",
+  },
+  {
+    label: "Delivery",
+    href: "/delivery",
+  },
+  {
+    label: "Locations",
+    href: "/locations",
+  },
+  {
+    label: "Careers",
+    href: "/careers",
+  },
+];
+
+export const phones = [
+  {
+    title: "Downtown",
+    phone: "+1 202 555-0132",
+  },
+  {
+    title: "Riverside",
+    phone: "+1 202 555-0178",
+  },
+  {
+    title: "Delivery",
+    phone: "+1 202 555-0100",
+  },
+];
