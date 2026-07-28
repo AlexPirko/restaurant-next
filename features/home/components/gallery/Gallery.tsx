@@ -30,7 +30,7 @@ export function Gallery() {
             md:grid-cols-2
 
             lg:grid-cols-12
-            lg:auto-rows-90
+            lg:auto-rows-76
           "
         >
           {gallery.items.map((item) => (

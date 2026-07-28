@@ -7,7 +7,7 @@ import { featuredMenu } from "./menu.data";
 
 export function FeaturedMenu() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-8 lg:py-16">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
