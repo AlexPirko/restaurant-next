@@ -4,6 +4,10 @@ export const navigation = [
     href: "/menu",
   },
   {
+    label: "About",
+    href: "/about",
+  },
+  {
     label: "Private Events",
     href: "/private-events",
   },
