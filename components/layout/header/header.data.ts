@@ -9,7 +9,7 @@ export const navigation = [
   },
   {
     label: "Private Events",
-    href: "/private-events",
+    href: "/reservation",
   },
   {
     label: "Delivery",
